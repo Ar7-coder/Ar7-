@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match-3 Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Match-3 Game</h1>
+    <div class="grid" id="grid"></div>
+    <script src="script.js"></script>
+</body>
+</html>body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    gap: 2px;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    font-size: 24px;
+    cursor: pointer;
+}const grid = document.getElementById('grid');
+const colors = ['🍬', '🍭', '🍫', '🍬', '🍩', '🍪', '🍰', '🍦'];
+const board = [];
+
+// Create the game board
+for (let i = 0; i < 8; i++) {
+    board[i] = [];
+    for (let j = 0; j < 8; j++) {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        board[i][j] = randomColor;
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.textContent = randomColor;
+        grid.appendChild(cell);
+    }
+}
+
+// Check for matches (simple version)
+function checkMatches() {
+    // Implementation for match checking will go here
+}
+
+// Call the function to check for matches
+checkMatches();
