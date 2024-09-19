@@ -1,0 +1,24 @@
+const grid = document.getElementById('grid');
+const colors = ['🍬', '🍭', '🍫', '🍬', '🍩', '🍪', '🍰', '🍦'];
+const board = [];
+
+// Create the game board
+for (let i = 0; i < 8; i++) {
+    board[i] = [];
+    for (let j = 0; j < 8; j++) {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        board[i][j] = randomColor;
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.textContent = randomColor;
+        grid.appendChild(cell);
+    }
+}
+
+// Check for matches (simple version)
+function checkMatches() {
+    // Implementation for match checking will go here
+}
+
+// Call the function to check for matches
+checkMatches();
